@@ -1,0 +1,18 @@
+---
+import Layout from "../layouts/Layout.astro";
+
+import LoginForm from "../components/LoginForm.tsx";
+import Break from "../components/Break.tsx";
+---
+
+<Layout title="Login">
+	<div class="w-full min-h-screen absolute bg-zinc-800 sm:bg-zinc-900 flex flex-col justify-center items-center">
+		<div class="relative bg-zinc-800 p-8 flex flex-col justify-center w-full md:w-[50%] md:rounded-md">
+      <div class="text-white text-2xl font-bold">Login to an Account</div>
+      <Break size="md" />
+      <LoginForm client:load/>
+      <Break size="xl" visible={true}></Break>
+	  <div class="text-white text-sm font-normal text-center">Don't have an account? <a href="./register" class="text-blue-700 hover:text-blue-600  transition-all duration-100">Register</a></div>
+	</div>
+	</div>
+</Layout>

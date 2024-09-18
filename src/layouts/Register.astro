@@ -1,0 +1,26 @@
+---
+import Layout from "./Layout.astro";
+
+import Break from "../components/Break.tsx";
+import RegisterForm from "../components/RegisterForm.tsx";
+//import Link from "../components/Link.tsx";
+---
+
+<div
+  class="w-full min-h-screen bg-zinc-800 sm:bg-zinc-900 flex flex-row justify-center items-center"
+>
+  <div
+    class="md:w-[50%] hidden md:block text-center text-white text-6xl font-bold"
+  >
+    Welcome 👋
+  </div>
+  <div
+    class="bg-zinc-800 p-8 flex flex-col justify-center w-full md:w-[50%] md:rounded-s-md"
+  >
+    <div class="text-white text-2xl font-bold">Register an Account</div>
+    <Break size="md" visible={false} />
+    <RegisterForm client:load></RegisterForm>
+    <Break size="xl" visible={true}></Break>
+    <div class="text-white text-sm font-normal text-center">Already registered? <a href="./login" class="text-blue-700 hover:text-blue-600  transition-all duration-100">Log In</a></div>
+  </div>
+</div>

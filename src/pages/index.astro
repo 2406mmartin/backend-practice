@@ -1,0 +1,19 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Button from '../components/Button.tsx';
+
+if (!Astro.locals.user) {
+	return Astro.redirect("/login");
+}
+---
+
+<Layout title="Home">
+	<div class="flex flex-col gap-8">
+		<div class="bg-white px-4 py-8 w-full text-center">
+			you have a an authenticated session. so cool
+		</div>
+		<form method="post" action="/api/logout">
+			<Button id="logout" type="lg" title="Log Out"></Button>
+		</form>
+	</div>
+</Layout>
